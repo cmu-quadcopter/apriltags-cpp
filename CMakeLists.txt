@@ -1,8 +1,10 @@
 # swatbotics/apriltags-cpp/CMakeLists.txt
 
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 
 project(apriltagscpp)
+
+set(CMAKE_CXX_STANDARD 11)
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -25,8 +27,7 @@ find_library(GLUT_LIBRARY glut)
 
 include(FindPkgConfig)
 
-pkg_search_module(OPENCV REQUIRED opencv>=2.3 opencv-2.3.1)
-include_directories(${OPENCV_INCLUDE_DIRS})
+find_package(OpenCV REQUIRED)
 
 pkg_check_modules(CAIRO cairo)
 

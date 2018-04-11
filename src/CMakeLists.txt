@@ -12,9 +12,9 @@ add_library(${PROJECT_NAME} SHARED
   UnionFindSimple.cpp
 )
 
-set(AT_LIBS ${PROJECT_NAME} ${OPENCV_LDFLAGS})
+set(AT_LIBS ${PROJECT_NAME} ${OpenCV_LIBS})
 
-target_link_libraries(${PROJECT_NAME} ${AT_LIBS})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
 add_executable(camtest camtest.cpp)
 target_link_libraries(camtest ${AT_LIBS})
